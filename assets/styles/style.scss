@@ -1,0 +1,98 @@
+$brands-primary:(
+    "black": #1D1D1D,
+    "white": #FFF5E5,
+
+);
+
+$brands-secondary:(
+    "blue": #79C5D7, 
+    "yellow": #FADD4B,
+    "red": #F98E45,
+);
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "PP Pangram", sans-serif;
+}
+
+body{
+    background-color: map-get($brands-primary, "white");
+
+
+
+    h1{
+        margin-top: 100px;
+        margin-bottom: 50px;
+        font-size: 80px;
+        text-align: center;
+        color: map-get($brands-primary , "black");
+    }
+    button,input{
+        display: block;
+        border-radius: 30px;
+        font-size: 20px;
+        border: solid map-get($brands-primary , "black") 1px;
+        color: solid map-get($brands-primary , "black") 1px;
+        padding: 16px;
+        width: 50%;
+        margin: 0 auto;
+        background-color: map-get($brands-primary, "white");
+    }
+    button{
+        margin-top: 16px;
+        background-color: map-get($brands-secondary, "yellow");
+        cursor: pointer;
+    }
+    
+    .bubble{
+        position: absolute;
+        padding: 4px;
+        text-align: center;
+        width: 100px;
+        border-radius: 20px;
+        
+        &.red{
+            background-color: map-get($brands-secondary, "red");
+        }
+        &.blue{
+            background-color: map-get($brands-secondary, "blue");
+        }
+
+        &:nth-of-type(1){
+            left: 10%;
+            top: 10%;
+        }
+        &:nth-of-type(2){
+            left: 80%;
+            top: 40%;
+        }
+        &:nth-of-type(3){
+            left: 45%;
+            top: 20%;
+        }
+        &:nth-of-type(4){
+            left: 60%;
+            top: 50%;
+        }
+        &:nth-of-type(5){
+            left: 25%;
+            top: 55%;
+        }
+
+    }
+
+}
+
+
+
+
+@font-face {
+    font-family: "PP Pangram";
+    src: url("../fonts/PPPangramSans-CompressedExtrabold.otf") format("opentype");
+    font-display: swap;
+    font-weight: bold;
+    font-style: normal;
+}

@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PP Pangram", sans-serif;
+}
+
+body {
+  background-color: #FFF5E5;
+}
+body h1 {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  font-size: 80px;
+  text-align: center;
+  color: #1D1D1D;
+}
+body button, body input {
+  display: block;
+  border-radius: 30px;
+  font-size: 20px;
+  border: solid #1D1D1D 1px;
+  color: solid #1D1D1D 1px;
+  padding: 16px;
+  width: 50%;
+  margin: 0 auto;
+  background-color: #FFF5E5;
+}
+body button {
+  margin-top: 16px;
+  background-color: #FADD4B;
+  cursor: pointer;
+}
+body .bubble {
+  position: absolute;
+  padding: 4px;
+  text-align: center;
+  width: 100px;
+  border-radius: 20px;
+}
+body .bubble.red {
+  background-color: #F98E45;
+}
+body .bubble.blue {
+  background-color: #79C5D7;
+}
+body .bubble:nth-of-type(1) {
+  left: 10%;
+  top: 10%;
+}
+body .bubble:nth-of-type(2) {
+  left: 80%;
+  top: 40%;
+}
+body .bubble:nth-of-type(3) {
+  left: 45%;
+  top: 20%;
+}
+body .bubble:nth-of-type(4) {
+  left: 60%;
+  top: 50%;
+}
+body .bubble:nth-of-type(5) {
+  left: 25%;
+  top: 55%;
+}
+
+@font-face {
+  font-family: "PP Pangram";
+  src: url("../fonts/PPPangramSans-CompressedExtrabold.otf") format("opentype");
+  font-display: swap;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/*# sourceMappingURL=style.css.map */
