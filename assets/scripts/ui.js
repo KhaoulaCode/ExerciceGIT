@@ -7,6 +7,7 @@ const displayBubbles = (isWin, isGreater)=>{
         const p = document.querySelector("p");
         p.innerHTML = isGreater ? "Le nombre est plus grand" : "le nombre est plus petit"
     }
+
     for(let i =0; i<5; i++){
 
         const div = document.createElement("div");
@@ -20,7 +21,6 @@ const displayBubbles = (isWin, isGreater)=>{
     if(isWin){
         //showForm
     }
-
 
     setTimeout(()=>{
         const bubbles =  document.querySelectorAll(".bubble");
@@ -45,10 +45,8 @@ const init = ()=>{
         value = parseInt(input.value)
     })
     button.addEventListener("click", ()=>{
-
         logic.addTries()
         logic.isEquals(value) ? displayBubbles(true, logic.isGreaterThan(value)) : displayBubbles(false, logic.isGreaterThan(value));
-
     })
 }
 
