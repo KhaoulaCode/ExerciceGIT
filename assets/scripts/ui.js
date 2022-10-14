@@ -1,18 +1,14 @@
-import logic from "./logic.js"
 let value = 0;
 
 
-const displayBubbles = (isWin, isGreater)=>{
-    if(!isWin){
-        const p = document.querySelector("p");
-        p.innerHTML = isGreater ? "Le nombre est plus grand" : "le nombre est plus petit"
-    }
+const displayBubbles = (isWin)=>{
     for(let i =0; i<5; i++){
 
         const div = document.createElement("div");
         div.classList.add("bubble");
         div.classList.add(isWin ? "blue" : "red");
-        div.innerHTML =  isWin ? "Bravo 🎉" : "Dommage 😞"
+        div.innerHTML =  isWin ? "Brabo 🎉" : "Dommage 😞"
+        
         document.querySelector("body").append(div)
     }
 
@@ -36,14 +32,8 @@ const init = ()=>{
     const input = document.querySelector("input");
     const button = document.querySelector("button");
 
-    input.addEventListener("change", ()=>{
-        value = parseInt(input.value)
-    })
     button.addEventListener("click", ()=>{
-
-        logic.addTries()
-        logic.isEquals(value) ? displayBubbles(true, logic.isGreaterThan(value)) : displayBubbles(false, logic.isGreaterThan(value));
-
+        value = parseInt(input.value)
     })
 }
 
