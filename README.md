@@ -1,4 +1,4 @@
-# 🚀 ExerciceGIT
+# 🎲 Gambling game
 
 ## Emojis : 
   - 💄 style (CSS)
