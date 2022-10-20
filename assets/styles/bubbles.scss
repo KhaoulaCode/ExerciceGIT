@@ -1,0 +1,35 @@
+    
+.bubble{
+    position: absolute;
+    padding: 4px;
+    text-align: center;
+    width: 100px;
+    border-radius: 20px;
+    
+    &.red{
+        background-color: map-get($brands-secondary, "red");
+    }
+    &.blue{
+        background-color: map-get($brands-secondary, "blue");
+    }
+    &:nth-of-type(1){
+        left: 10%;
+        top: 10%;
+    }
+    &:nth-of-type(2){
+        left: 80%;
+        top: 40%;
+    }
+    &:nth-of-type(3){
+        left: 45%;
+        top: 20%;
+    }
+    &:nth-of-type(4){
+        left: 60%;
+        top: 50%;
+    }
+    &:nth-of-type(5){
+        left: 25%;
+        top: 55%;
+    }
+}
