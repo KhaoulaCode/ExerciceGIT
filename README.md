@@ -8,6 +8,7 @@
 
 ## Le code :
   - Technos : HTML CSS JS 
+  - Architecture : MVC
 
 ## Emojis : 
   - 💄 style (CSS)
