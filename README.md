@@ -9,6 +9,7 @@
 ## Le code :
   - Technos : HTML SCSS JS 
   - Architecture : MVC
+  - Les anciens scores sont stockés dans le local storage
 
 
 ## Emojis : 
