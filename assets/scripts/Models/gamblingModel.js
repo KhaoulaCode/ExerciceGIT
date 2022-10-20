@@ -21,6 +21,9 @@ const setValue = (v)=>{
 const getValue = ()=>{
     return value;
 }
+const getTries = ()=>{
+    return tries;
+}
 const isEquals = (userValue)=>{
     return userValue === random
 }
@@ -29,5 +32,5 @@ const isGreaterThan = (userValue) => {
     return userValue < random
 }
 
-export default { init, isEquals, setValue, getValue, addTries, isGreaterThan }
+export default { init, isEquals, setValue, getValue, getTries, addTries, isGreaterThan }
 
