@@ -1,10 +1,9 @@
 import ui from "./ui.js"
-
+import logic from "./logic.js"
 
 
 
 window.addEventListener("load", ()=>{
     ui.init();
-
-    ui.displayBubbles(false)
+    logic.init();
 })

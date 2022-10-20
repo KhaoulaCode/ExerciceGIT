@@ -15,6 +15,9 @@ body h1 {
   text-align: center;
   color: #1D1D1D;
 }
+p{
+  text-align: center;
+}
 body button, body input {
   display: block;
   border-radius: 30px;

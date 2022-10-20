@@ -21,6 +21,9 @@ $brands-secondary:(
 body{
     background-color: map-get($brands-primary, "white");
 
+    p{
+        text-align: center;
+    }
 
 
     h1{
