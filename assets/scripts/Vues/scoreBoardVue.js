@@ -1,4 +1,5 @@
 import scoreController from "../Controllers/scoreController.js";
+import scoreBoardModel from "../Models/scoreBoardModel.js"
 
 const displayModal = () => {
     const modal = document.querySelector(".highscore")
@@ -17,6 +18,16 @@ const askNameModale = ()=>{
     const modal = document.querySelector("#register")
     modal.style.display = "flex";
     btns.style.display = "none";
+    refreshList();
 }
 
-export default {displayModal, hideModale, askNameModale}
+const refreshList = ()=>{
+    const list = document.querySelector(".winner-list ul")
+    let lis = "";
+    scoreBoardModel.getScores().forEach(user => {
+        lis += `<li>nom : ${user.userName} | score : ${user.tries}</li>`;
+    });
+    list.innerHTML = lis;
+}
+
+export default {displayModal, hideModale, askNameModale, refreshList}

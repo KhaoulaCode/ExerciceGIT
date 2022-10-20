@@ -46,7 +46,7 @@ const addScore = (name, tries)=>{
         winners.push(newScore);
     }
 
-    winners.sort();
+    winners.sort((a,b)=>{ return a.tries - b.tries });
 
     localStorage.setItem("winners",  JSON.stringify(winners));
     

@@ -11,6 +11,7 @@ const init = ()=>{
     inputName.addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
             scoreBoardModel.addScore(inputName.value, gamblingModel.getTries());
+            scoreBoardVue.refreshList()
         }
     });
     
