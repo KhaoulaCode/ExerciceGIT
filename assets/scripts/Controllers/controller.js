@@ -1,4 +1,4 @@
-import initTry from "./tryController.js"
+import initTry from "./gamblingController.js"
 
 const init = ()=>{
     initTry();

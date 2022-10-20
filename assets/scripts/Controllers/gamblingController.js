@@ -1,4 +1,4 @@
-import tryModel from "../Models/tryModel.js"
+import tryModel from "../Models/gamblingModel.js"
 import displayBubbles from "../Vues/bubblesVue.js"
 const init = ()=>{
     const input = document.querySelector("input");

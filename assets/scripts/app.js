@@ -1,6 +1,6 @@
 
 import initControllers from "./Controllers/controller.js"
-import logic from "./Models/tryModel.js"
+import logic from "./Models/gamblingModel.js"
 import scoreBoard from "./Models/scoreBoeard.js"
 
 

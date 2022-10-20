@@ -1,6 +1,7 @@
 let winners = [];
 
 const init = ()=>{
+    console.log("test")
     winners = localStorage.getItem("winners");
     if(!winners){
         winners = [];
