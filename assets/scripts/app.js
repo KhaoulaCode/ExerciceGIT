@@ -1,7 +1,7 @@
 
 import initControllers from "./Controllers/controller.js"
 import logic from "./Models/gamblingModel.js"
-import scoreBoard from "./Models/scoreBoeard.js"
+import scoreBoard from "./Models/scoreBoardModel.js"
 
 
 window.addEventListener("load", ()=>{

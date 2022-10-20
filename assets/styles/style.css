@@ -33,7 +33,7 @@
 }
 
 .highscore {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -48,6 +48,17 @@
 .highscore h2 {
   margin-bottom: 24px;
   font-size: 32px;
+}
+.highscore #btns {
+  text-align: center;
+  width: 100vw;
+}
+.highscore #register {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 .highscore .winner-list {
   margin-top: 10px;

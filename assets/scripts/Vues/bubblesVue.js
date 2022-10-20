@@ -1,4 +1,5 @@
 
+import scoreBoardVue from "../Vues/scoreBoardVue.js"
 
 
 const displayBubbles = (isWin, isGreater)=>{
@@ -17,6 +18,7 @@ const displayBubbles = (isWin, isGreater)=>{
 
 
     if(isWin){
+        scoreBoardVue.displayModal();
 
     }
 

@@ -5,7 +5,7 @@
         margin-bottom: 24px;
         font-size: 32px;
     }
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -15,10 +15,22 @@
     left: 0;
     width: 100vw;
     height: 100vh;
+
     background-color: map-get($brands-primary, "white");
 
 
+    #btns{
+        text-align: center;
+        width: 100vw;
+    }
 
+    #register{
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
 
     .winner-list{
         margin-top: 10px;

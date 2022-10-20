@@ -3,7 +3,7 @@ import initScore from './scoreController.js'
 
 const init = ()=>{
     initTry();
-    initScore();
+    initScore.init();
 }
 
 export default init;

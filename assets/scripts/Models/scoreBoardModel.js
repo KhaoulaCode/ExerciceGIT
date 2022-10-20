@@ -1,7 +1,6 @@
 let winners = [];
 
 const init = ()=>{
-    console.log("test")
     winners = localStorage.getItem("winners");
     if(!winners){
         winners = [];
@@ -27,9 +26,6 @@ const getScores = ()=>{
 }
 
 
-const findUser = (name)=>{
-    winners.find(u => u.userName === name)
-} 
 
 
 const addScore = (name, tries)=>{
@@ -38,7 +34,7 @@ const addScore = (name, tries)=>{
         userName : name,
         tries : tries
     }
-    
+
     winners.forEach(user => {
         if(user.userName === name){
             user.tries = tries;
@@ -49,6 +45,8 @@ const addScore = (name, tries)=>{
     if(!isFound){
         winners.push(newScore);
     }
+
+    winners.sort();
 
     localStorage.setItem("winners",  JSON.stringify(winners));
     
