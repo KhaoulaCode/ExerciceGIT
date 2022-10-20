@@ -7,7 +7,7 @@
 
 
 ## Le code :
-  - Technos : HTML SCSS JS 
+  - Technos : HTML SCSS (on s'est un peu amusés) et JS 
   - Architecture : MVC
   - Les anciens scores sont stockés dans le local storage
 
