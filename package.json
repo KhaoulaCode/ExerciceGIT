@@ -1,0 +1,22 @@
+{
+  "name": "exercicegit",
+  "version": "1.0.0",
+  "description": "## Le jeu :    - Entrez un nombre dans l'input (le jeu vous indiqueras si le nombre recherché est inferieur ou supperieur)   - Une fois le nombre trouvé le jeu vous demande si vous voulez enregistrer    - Si oui vous n'aurez plus qu'a rentrer votre nom et votre classement apparaîtra (presser entrer pour valider).",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KhaoulaCode/ExerciceGIT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KhaoulaCode/ExerciceGIT/issues"
+  },
+  "homepage": "https://github.com/KhaoulaCode/ExerciceGIT#readme",
+  "dependencies": {
+    "jest": "^29.2.1"
+  }
+}
