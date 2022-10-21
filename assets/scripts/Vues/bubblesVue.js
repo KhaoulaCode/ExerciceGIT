@@ -1,5 +1,5 @@
-import logic from "./logic.js"
-let value = 0;
+
+import scoreBoardVue from "../Vues/scoreBoardVue.js"
 
 
 const displayBubbles = (isWin, isGreater)=>{
@@ -9,7 +9,6 @@ const displayBubbles = (isWin, isGreater)=>{
     }
 
     for(let i =0; i<5; i++){
-
         const div = document.createElement("div");
         div.classList.add("bubble");
         div.classList.add(isWin ? "blue" : "red");
@@ -19,7 +18,8 @@ const displayBubbles = (isWin, isGreater)=>{
 
 
     if(isWin){
-        //showForm
+        scoreBoardVue.displayModal();
+
     }
 
     setTimeout(()=>{
@@ -33,22 +33,7 @@ const displayBubbles = (isWin, isGreater)=>{
     
 }
 
-const getUserInput = ()=>{
-    return value;
-}
-
-const init = ()=>{
-    const input = document.querySelector("input");
-    const button = document.querySelector("button");
-
-    input.addEventListener("change", ()=>{
-        value = parseInt(input.value)
-    })
-    button.addEventListener("click", ()=>{
-        logic.addTries()
-        logic.isEquals(value) ? displayBubbles(true, logic.isGreaterThan(value)) : displayBubbles(false, logic.isGreaterThan(value));
-    })
-}
 
 
-export default {getUserInput, init, displayBubbles}
+
+export default displayBubbles;

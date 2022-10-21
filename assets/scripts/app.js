@@ -1,9 +1,11 @@
-import ui from "./ui.js"
-import logic from "./logic.js"
 
+import initControllers from "./Controllers/controller.js"
+import logic from "./Models/gamblingModel.js"
+import scoreBoard from "./Models/scoreBoardModel.js"
 
 
 window.addEventListener("load", ()=>{
-    ui.init();
+    scoreBoard.init();
+    initControllers();
     logic.init();
 })
