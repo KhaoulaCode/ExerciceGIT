@@ -2,15 +2,16 @@
 
 .highscore{
     h2{
+        text-align: center;
         margin-bottom: 24px;
         font-size: 32px;
     }
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     left: 0;
     width: 100vw;
@@ -20,15 +21,15 @@
 
 
     #btns{
-        text-align: center;
+        
         width: 100vw;
     }
 
     #register{
-        display: none;
+        display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         width: 100%;
     }
 
@@ -40,7 +41,7 @@
         width: 50%;
         height: 300px;
         overflow: auto;
-        h3{
+        h2{
             text-align: center;
             margin-bottom: 16px;
         }
