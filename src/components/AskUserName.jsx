@@ -66,7 +66,6 @@ const AskUserName = ({tries, setIsWin})=>{
                 <h2> Voulez vous enregistrer votre score ?</h2>
                 <button onClick={e=>{
                     e.preventDefault()
-                    console.log("grejnkdgrfjkh")
                     setIsWin(false)
                 }}>
                     Ne pas enregistrer 
