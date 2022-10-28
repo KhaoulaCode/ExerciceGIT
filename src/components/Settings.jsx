@@ -35,25 +35,17 @@ const Settings = ()=>{
     React.useEffect(()=>{
         const settingsString = localStorage.getItem("settings")
         if(!settingsString){
-            console.log(1)
             localStorage.setItem("settings",  JSON.stringify(settings));
         }else{
             try{
-                console.log(2)
                 let a = JSON.parse(settingsString);
-                console.log(a)
-                
-                setNbScores(a.nbScores)
-                setNbChars(a.nbChars)
-                setNbTries(a.nbTries)
 
                 setSettings(a)
 
-                localStorage.setItem("settings",  JSON.stringify(settings));
+                //localStorage.setItem("settings",  JSON.stringify(settings));
             }catch{
-                console.log(3)
                 localStorage.setItem("settings",  JSON.stringify(settings));
-              }
+            }
         }
     },[])
 
@@ -68,7 +60,7 @@ const Settings = ()=>{
                 <div className="settings">
                     <h2>Settings</h2>
                     <div className="row">
-                        <label>Tries number</label>
+                        <label>Score number</label>
                         <input 
                             type="number" 
                             value={settings.nbScores} 
@@ -81,7 +73,7 @@ const Settings = ()=>{
                         />
                     </div>
                     <div className="row">
-                        <label>Score number</label>
+                        <label>Char number</label>
                         <input 
                             type="number" 
                             value={settings.nbChars}
@@ -94,7 +86,7 @@ const Settings = ()=>{
                         />
                     </div>
                     <div className="row">
-                        <label>Char number</label>
+                        <label>Tries number</label>
                         <input
                             type="number"
                             value={settings.nbTries}

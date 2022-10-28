@@ -3,10 +3,16 @@ import React from "react";
 const AskUserName = ({tries, setIsWin})=>{
 
     const [winners, setWinners] = React.useState([])
+    const [settings, setSettings] = React.useState({
+        nbTries : 10,
+        nbScores : 10,
+        nbChars : 10,
+    })
     const [nbWinners, setnbWinners] = React.useState([]) // On s'en fout c'est juste pour raffraichir le composant. (oui c'est crado)
     const [wannaRegister, setWannaRegister] = React.useState(false)
     const addScore = (name, tries)=>{
         let isFound = false;
+
         const newScore = {
             userName : name,
             tries : tries
@@ -19,7 +25,7 @@ const AskUserName = ({tries, setIsWin})=>{
             }
         })
         
-        if(!isFound){
+        if(!isFound && name.length <= settings.nbChars){
             winners.push(newScore);
         }
     
@@ -52,6 +58,19 @@ const AskUserName = ({tries, setIsWin})=>{
                 setWinners([]);
               }
         }
+
+        const settingsString = localStorage.getItem("settings")
+
+        if(settingsString){
+            try{
+                let a = JSON.parse(settingsString);
+                setSettings(a)
+
+            }catch{
+                console.log("impossible de parser")
+            }
+        }
+
     },[])
 
     React.useEffect(()=>{
