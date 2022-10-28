@@ -1,13 +1,12 @@
 import React from "react";
-
+import { useSelector } from "react-redux";
 const AskUserName = ({tries, setIsWin})=>{
-
+    const nbChars = useSelector((state) => state.settings.nbChars);
+    const nbScores = useSelector((state) => state.settings.nbScores);
     const [winners, setWinners] = React.useState([])
-    const [settings, setSettings] = React.useState({
-        nbTries : 10,
-        nbScores : 10,
-        nbChars : 10,
-    })
+
+    
+
     const [nbWinners, setnbWinners] = React.useState(0) 
     const [wannaRegister, setWannaRegister] = React.useState(false)
     const addScore = (name, tries)=>{
@@ -25,7 +24,7 @@ const AskUserName = ({tries, setIsWin})=>{
             }
         })
         
-        if(!isFound && name.length <= settings.nbChars && nbWinners < settings.nbScores){
+        if(!isFound && name.length <= nbChars && nbWinners < nbScores){
             winners.push(newScore);
             setnbWinners(nbWinners + 1)
         }
@@ -60,18 +59,6 @@ const AskUserName = ({tries, setIsWin})=>{
                 setWinners([]);
                 setnbWinners(0);
               }
-        }
-
-        const settingsString = localStorage.getItem("settings")
-
-        if(settingsString){
-            try{
-                let a = JSON.parse(settingsString);
-                setSettings(a)
-
-            }catch{
-                console.log("impossible de parser")
-            }
         }
 
     },[])

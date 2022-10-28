@@ -4,8 +4,11 @@ import Bubbles from "../components/Bubbles"
 import AskUserName from '../components/AskUserName'
 import Settings from "../components/Settings";
 import Lost from "../components/Lost.jsx"
+import { useSelector } from "react-redux";
 
 const Page = ()=>{
+    const nbTries = useSelector((state) => state.settings.nbTries);
+
 
     const [isWin, setIsWin] = React.useState(false);
     const [isDisplayBubbles, setIsDisplayBubbles] = React.useState(false);
@@ -55,7 +58,7 @@ const Page = ()=>{
                 isWin ? <AskUserName tries={tries} setIsWin={setIsWin}/> : ""
             }
             {
-                <Lost/>
+                nbTries <= tries ? <Lost/> : ""
             }
         </>
     )
