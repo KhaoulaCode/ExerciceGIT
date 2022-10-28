@@ -3,6 +3,7 @@ import Gambling from "../components/Gambling"
 import Bubbles from "../components/Bubbles"
 import AskUserName from '../components/AskUserName'
 import Settings from "../components/Settings";
+import Lost from "../components/Lost.jsx"
 
 const Page = ()=>{
 
@@ -11,6 +12,15 @@ const Page = ()=>{
     const [random, setRandom] = React.useState(Math.round(1 + Math.random() * 99));
     const [tries, setTries] = React.useState(0);
 
+
+    React.useEffect(()=>{
+        setIsDisplayBubbles(true);
+
+        setTimeout(()=>{
+            setIsDisplayBubbles(false)
+        }, 2500)
+
+    },[tries])
 
     React.useEffect(()=>{
         setIsDisplayBubbles(true);
@@ -43,6 +53,9 @@ const Page = ()=>{
             }
             {
                 isWin ? <AskUserName tries={tries} setIsWin={setIsWin}/> : ""
+            }
+            {
+                <Lost/>
             }
         </>
     )

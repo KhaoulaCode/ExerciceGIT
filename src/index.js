@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+import reduxStore from "./assets/store/redux";
+import { Provider } from "react-redux";
 import "./assets/styles/root.scss"
 import Page from './Pages';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-    <Page/>
+    <Provider store={reduxStore}>
+      <Page/>
+    </Provider>
   /* </React.StrictMode> */
+
 );
 
 // If you want to start measuring performance in your app, pass a function

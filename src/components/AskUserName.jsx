@@ -27,9 +27,9 @@ const AskUserName = ({tries, setIsWin})=>{
         
         if(!isFound && name.length <= settings.nbChars && nbWinners < settings.nbScores){
             winners.push(newScore);
+            setnbWinners(nbWinners + 1)
         }
     
-        setnbWinners(nbWinners + 1)
         winners.sort((a,b)=>{ return a.tries - b.tries });
         
         localStorage.setItem("winners",  JSON.stringify(winners));
