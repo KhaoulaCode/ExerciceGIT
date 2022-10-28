@@ -8,7 +8,7 @@ const AskUserName = ({tries, setIsWin})=>{
         nbScores : 10,
         nbChars : 10,
     })
-    const [nbWinners, setnbWinners] = React.useState([]) // On s'en fout c'est juste pour raffraichir le composant. (oui c'est crado)
+    const [nbWinners, setnbWinners] = React.useState(0) 
     const [wannaRegister, setWannaRegister] = React.useState(false)
     const addScore = (name, tries)=>{
         let isFound = false;
@@ -25,7 +25,7 @@ const AskUserName = ({tries, setIsWin})=>{
             }
         })
         
-        if(!isFound && name.length <= settings.nbChars){
+        if(!isFound && name.length <= settings.nbChars && nbWinners < settings.nbScores){
             winners.push(newScore);
         }
     
@@ -43,6 +43,7 @@ const AskUserName = ({tries, setIsWin})=>{
         const winnerString = localStorage.getItem("winners")
         if(!winnerString){
             setWinners([]);
+            setnbWinners(0);
         }else{
             try{
                 const newList = [];
@@ -53,9 +54,11 @@ const AskUserName = ({tries, setIsWin})=>{
                         tries: el.tries
                     });
                 })
+                setnbWinners(newList.length)
                 setWinners(newList);
             }catch{
                 setWinners([]);
+                setnbWinners(0);
               }
         }
 
