@@ -2,10 +2,13 @@ import React from "react";
 import Gambling from "../components/Gambling"
 import Bubbles from "../components/Bubbles"
 import AskUserName from '../components/AskUserName'
-//Import scores
-//Import setting
+import Settings from "../components/Settings";
+import Lost from "../components/Lost.jsx"
+import { useSelector } from "react-redux";
 
 const Page = ()=>{
+    const nbTries = useSelector((state) => state.settings.nbTries);
+
 
     const [isWin, setIsWin] = React.useState(false);
     const [isDisplayBubbles, setIsDisplayBubbles] = React.useState(false);
@@ -21,13 +24,26 @@ const Page = ()=>{
         }, 2500)
 
     },[tries])
+
+    React.useEffect(()=>{
+        setIsDisplayBubbles(true);
+
+        setTimeout(()=>{
+            setIsDisplayBubbles(false)
+        }, 2500)
+
+    },[tries])
     
 
 
 
 
     return (
-        <>
+        <>  
+            {
+                isWin ? <AskUserName tries={tries} setIsWin={setIsWin}/> : ""
+            } 
+            <Settings/>
             <Gambling 
                 random={random}
                 tries={tries}
@@ -40,6 +56,9 @@ const Page = ()=>{
             }
             {
                 isWin ? <AskUserName tries={tries} setIsWin={setIsWin}/> : ""
+            }
+            {
+                nbTries <= tries ? <Lost/> : ""
             }
         </>
     )

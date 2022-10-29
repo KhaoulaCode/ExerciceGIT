@@ -7,18 +7,24 @@
 
 
 ## Le code :
-  - Technos : REACT SCSS
+  - Technos : REACT REDUX SCSS
   - Paradigme : Fonctionnel (JSX)
 
 ## Installation : 
   - `npm install`
+  - `npm run start`
 
 ## Scope : 
   - 💄 style (CSS)
   - 💬 integration (html)
   - 🔧 logic (js)
   
-  
- ## Authors 
+## Authors 
   - BOULHDIR Khaoula
   - VIVIER Émilien 
+
+
+## TODO
+  - Mettre les variable d'état du jeu dans le store
+  - tests unitaires (oui à la fin lol (mieux vaut tard que jamais))
+  - Github actions

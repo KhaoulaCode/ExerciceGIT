@@ -1,12 +1,17 @@
 import React from "react";
-
+import { useSelector } from "react-redux";
 const AskUserName = ({tries, setIsWin})=>{
-
+    const nbChars = useSelector((state) => state.settings.nbChars);
+    const nbScores = useSelector((state) => state.settings.nbScores);
     const [winners, setWinners] = React.useState([])
-    const [nbWinners, setnbWinners] = React.useState([]) // On s'en fout c'est juste pour raffraichir le composant. (oui c'est crado)
+
+    
+
+    const [nbWinners, setnbWinners] = React.useState(0) 
     const [wannaRegister, setWannaRegister] = React.useState(false)
     const addScore = (name, tries)=>{
         let isFound = false;
+
         const newScore = {
             userName : name,
             tries : tries
@@ -19,11 +24,11 @@ const AskUserName = ({tries, setIsWin})=>{
             }
         })
         
-        if(!isFound){
+        if(!isFound && name.length <= nbChars && nbWinners < nbScores){
             winners.push(newScore);
+            setnbWinners(nbWinners + 1)
         }
     
-        setnbWinners(nbWinners + 1)
         winners.sort((a,b)=>{ return a.tries - b.tries });
         
         localStorage.setItem("winners",  JSON.stringify(winners));
@@ -37,6 +42,7 @@ const AskUserName = ({tries, setIsWin})=>{
         const winnerString = localStorage.getItem("winners")
         if(!winnerString){
             setWinners([]);
+            setnbWinners(0);
         }else{
             try{
                 const newList = [];
@@ -47,11 +53,14 @@ const AskUserName = ({tries, setIsWin})=>{
                         tries: el.tries
                     });
                 })
+                setnbWinners(newList.length)
                 setWinners(newList);
             }catch{
                 setWinners([]);
+                setnbWinners(0);
               }
         }
+
     },[])
 
     React.useEffect(()=>{
@@ -66,7 +75,6 @@ const AskUserName = ({tries, setIsWin})=>{
                 <h2> Voulez vous enregistrer votre score ?</h2>
                 <button onClick={e=>{
                     e.preventDefault()
-                    console.log("grejnkdgrfjkh")
                     setIsWin(false)
                 }}>
                     Ne pas enregistrer 

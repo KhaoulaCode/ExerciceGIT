@@ -18,8 +18,15 @@ const Gambling = ({setTries, tries, random, setIsWin})=>{
 
     return (<>
                 <h1>Gambling game</h1>
-                <input type="text" ref={input}/>
-                <button onClick={e=>send(e)}>Send</button>
+                <input type="text" ref={input}
+                    onKeyUp={e=>{
+                        if (e.key === 'Enter') {
+                            send(e)
+                        }
+                    }}
+                />
+                <button onClick={e=>send(e)} >
+                    Send</button>
             </>)
 }
 
